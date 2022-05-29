@@ -6,82 +6,95 @@
 #define MAX_CON 3
 using namespace std;
 
+class Contact
+{
+	public:
+		string firstName;
+		string lastName;
+		string nickName;
+		string phone;
+		string darkestSecret;
+};
+
 
 
 class PhoneBook
 {
-	char contacts[8];
 	public:
-		string name;
-		string mob;
-
-	void add(string newName, string newMob)
-	{
-		string name;
-		string mob;
-
-		name = newName;
-		mob = newMob;
-	}
+		PhoneBook( void );
+		~PhoneBook( void );
+		void add(void);
+		void search(void);
+		Contact con[MAX_CON];
+		int			con_len;
+	private:
 };
 
+PhoneBook::PhoneBook( void ) { }
+PhoneBook::~PhoneBook( void ) { }
 
-void PhoneBook::
+void PhoneBook::add(void)
+{
+	cin >> this->con[0].firstName;
+}
 
+// даю данные
+// добавить данные и записать в класс контакт, который передать в класс телефонна книга
+// void PhoneBook::
+// ~
 int main (void) {
 
-	setlocale(LC_ALL, "Russian");	
-	PhoneBook phoneBook[MAX_CON];
 
-	int choice = 0;
+	PhoneBook pb;
 
-	char name[10];
-	char lastname[10];
-	char phone[10];
-	char secret[10];
-	int  size = 0;
+	pb.add();
+	cout << pb.con[0].firstName << endl;
+	
+	
+	// int choice = 0;
+	// while (1) {
+	// 	cout<<"1.ADD\n";
+	// 	cout<<"2.SEARCH\n";
+	// 	cout<<"3.EXIT\n";
+	// 	cout<<"Вы выбрали: ";
+	// 	cin >> choice;
+		
+	// 	switch(choice)
+	// 	{
+	// 		case 1 : 
+	// 			cout<<"Вы выбрали ADD." << endl;
+	// 			if (size < MAX_CON) {
+	// 				cout << "Введите имя: ";
+	// 				cin >> name;
+	// 				cout << "Введите номер: ";
+	// 				cin >> phone;
+	// 				// cout << phoneBook[size].add(name, phone) << endl;
+	// 				// cout << phoneBook[size].name << endl;
+	// 				size++;
+	// 			} 
+	// 			else {
+	// 				cout << "Книга переполнена! Будет переписан первый контакт" << endl;
+	// 			}
+	// 			break;
+	// 		case 2 :
+	// 			cout<<"Вы выбрали SEARCH." << endl;;
+	// 			if (size) {
+	// 				for (int i = 0; i < MAX_CON; i++) {
+	// 					// phoneBook[0].show("12345", "123");
+	// 				}
+	// 			} else {
+	// 				cout << "PHONEBOOK IS EMPTY" << endl;
+	// 			}
+	// 			break;
+	// 		case 3 :
+	// 			cout<<"Выход!"<<endl;
+	// 			exit(1);
+	// 		default:
+	// 			cout<<"Нет такой опции!"<<endl;
+	// 			break;
+	// 			// exit(1);
+	// 	}
 
-	while (1) {
-		cout<<"1.ADD\n";
-		cout<<"2.SEARCH\n";
-		cout<<"3.EXIT\n";
-		cout<<"Вы выбрали: ";
-		cin >> choice;
-		switch(choice)
-		{
-			case 1 : 
-				cout<<"Вы выбрали ADD." << endl;
-				if (size < MAX_CON) {
-					cout << "Введите имя: ";
-					cin >> name;
-					cout << "Введите номер: ";
-					cin >> phone;
-					cout << phoneBook[size].add(name, phone) << endl;
-					cout << phoneBook[size].name << endl;
-					size++;
-				} 
-				else {
-					cout << "Книга переполнена! Будет переписан первый контакт" << endl;
-				}
-				break;
-			case 2 :
-				cout<<"Вы выбрали SEARCH." << endl;;
-				if (size) {
-					for (int i = 0; i < MAX_CON; i++) {
-						phoneBook[0].show("12345", "123");
-					}
-				} else {
-					cout << "PHONEBOOK IS EMPTY" << endl;
-				}
-				break;
-			case 3 :
-				cout<<"Выход!"<<endl;
-				exit(1);
-			default:
-				cout<<"Нет такой опции!"<<endl;
-				exit(1);
-		}
 
-
-	}
+	// }
 }
