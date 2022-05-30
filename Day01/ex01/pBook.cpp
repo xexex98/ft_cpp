@@ -16,8 +16,6 @@ class Contact
 		string darkestSecret;
 };
 
-
-
 class PhoneBook
 {
 	public:
@@ -27,15 +25,22 @@ class PhoneBook
 		void search(void);
 		Contact con[MAX_CON];
 		int			con_len;
+
 	private:
 };
 
-PhoneBook::PhoneBook( void ) { }
-PhoneBook::~PhoneBook( void ) { }
+PhoneBook::PhoneBook(void) {this->con_len = 0;};
+PhoneBook::~PhoneBook(void) { };
 
 void PhoneBook::add(void)
 {
-	cin >> this->con[0].firstName;
+	int size = this->con_len;
+	cout << "Введите Имя: " << endl;
+	cin >> this->con[this->con_len].firstName;
+	cout << "Введите Фамилию: " << endl;
+	cin >> this->con[this->con_len].lastName;
+	this->con_len++;
+
 }
 
 // даю данные
@@ -47,8 +52,9 @@ int main (void) {
 
 	PhoneBook pb;
 
+	cout << pb.con_len << endl;
 	pb.add();
-	cout << pb.con[0].firstName << endl;
+	cout << pb.con_len << endl;
 	
 	
 	// int choice = 0;
