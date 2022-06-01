@@ -6,13 +6,12 @@
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 22:45:18 by mbarra            #+#    #+#             */
-/*   Updated: 2022/06/02 01:00:45 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/06/02 01:06:10 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 #include "contact.hpp"
-using namespace std;
 
 PhoneBook::PhoneBook(void) {this->contuct_nums = 0; return ;};
 PhoneBook::~PhoneBook(void) {std::cout << "Закрытие телефонной книги!" << std::endl; return ;};
@@ -56,7 +55,7 @@ void	PhoneBook::dataOverflow(std::string str)
 	}
 	std::cout << "|" << std::setw(10) << std::setfill(' ') << str;
 }
-
+//TODO косяк был тут надо доделать
 void PhoneBook::search(void)
 {
 	int index = 0;
@@ -68,9 +67,9 @@ void PhoneBook::search(void)
 	for (int i = 0; i < this->contuct_nums; i++)
 	{
 		std::cout << "|" << std::setw(10) << std::setfill(' ') << i + 1;
-		dataOverflow(this->contact[index].getFirstName());
-		dataOverflow(this->contact[index].getLastName());
-		dataOverflow(this->contact[index].getNickName());
+		dataOverflow(this->contact[i].getFirstName());
+		dataOverflow(this->contact[i].getLastName());
+		dataOverflow(this->contact[i].getNickName());
 		std::cout << "|" << std::endl;
 	}
 	std::cout << "|-------------------------------------------|" << std::endl;
