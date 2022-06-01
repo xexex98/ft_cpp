@@ -1,62 +1,35 @@
-#include <iostream>
-#include <fstream>
-#include <string.h>
-#include <iomanip>
-// #include "phonebook.h"
-#define MAX_CON 3
-using namespace std;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/01 22:45:18 by mbarra            #+#    #+#             */
+/*   Updated: 2022/06/01 22:48:44 by mbarra           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-class Contact
-{
-	public:
-		string firstName;
-		string lastName;
-		string nickName;
-		string phone;
-		string darkestSecret;
-};
+#include "phonebook.hpp"
+#include "contact.hpp"
 
-class PhoneBook
-{
-	public:
-		PhoneBook( void );
-		~PhoneBook( void );
-		void add(void);
-		void search(void);
-		Contact con[MAX_CON];
-		int			con_len;
-
-	private:
-};
-
-PhoneBook::PhoneBook(void) {this->con_len = 0;};
-PhoneBook::~PhoneBook(void) { };
+PhoneBook::PhoneBook(void) {this->con_len = 0; return ;};
+PhoneBook::~PhoneBook(void) {std::cout << "Quit PhoneBook." << std::endl; return ;};
 
 void PhoneBook::add(void)
 {
 	int size = this->con_len;
-	cout << "Введите Имя: " << endl;
-	cin >> this->con[this->con_len].firstName;
-	cout << "Введите Фамилию: " << endl;
-	cin >> this->con[this->con_len].lastName;
-	this->con_len++;
-
+	return ;
 }
 
-// даю данные
-// добавить данные и записать в класс контакт, который передать в класс телефонна книга
-// void PhoneBook::
-// ~
+void PhoneBook::search(void)
+{
+	return ;
+}
+
 int main (void) {
-
-
 	PhoneBook pb;
 
-	cout << pb.con_len << endl;
-	pb.add();
-	cout << pb.con_len << endl;
-	
-	
 	// int choice = 0;
 	// while (1) {
 	// 	cout<<"1.ADD\n";
