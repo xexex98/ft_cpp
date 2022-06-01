@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 22:47:27 by mbarra            #+#    #+#             */
-/*   Updated: 2022/06/01 22:48:31 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/06/02 00:06:34 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 class PhoneBook
 {
 	private:
-		Contact con[MAX_CON];
-		int			con_len;
+		Contact contact[MAX_CON];
+		int			contuct_nums;
 
 	public:
 		PhoneBook( void );
@@ -33,6 +33,7 @@ class PhoneBook
 
 		void add(void);
 		void search(void);
+		void dataOverflow(std::string str);
 };
 
 #endif
