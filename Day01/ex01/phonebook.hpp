@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 22:47:27 by mbarra            #+#    #+#             */
-/*   Updated: 2022/06/02 00:06:34 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/06/02 00:21:56 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <iomanip>
 
 # include "contact.hpp"
-# define MAX_CON 3
+# define MAX_CON 2
 
 class PhoneBook
 {

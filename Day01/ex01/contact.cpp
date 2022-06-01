@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 22:40:26 by mbarra            #+#    #+#             */
-/*   Updated: 2022/06/01 22:55:22 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/06/02 00:42:26 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 Contact::Contact(void) {return ;}
 Contact::~Contact(void) {return ;}
 
-void Contact::setFirstName(void){getline(std::cin, this->firstName);}
-void Contact::setLastName(void){getline(std::cin, this->lastName);}
-void Contact::setNickName(void){getline(std::cin, this->nickName);}
-void Contact::setPhone(void){getline(std::cin, this->phone);}
-void Contact::setDarkestSecret(void){getline(std::cin, this->darkestSecret);}
+void Contact::setFirstName(std::string str){this->firstName = str;}
+void Contact::setLastName(std::string str){this->lastName = str;}
+void Contact::setNickName(std::string str){this->nickName = str;}
+void Contact::setPhone(std::string str){this->phone = str;}
+void Contact::setDarkestSecret(std::string str){this->darkestSecret = str;}
 
 std::string Contact::getFirstName(void) {return this->firstName;}
 std::string Contact::getLastName(void) {return this->lastName;}

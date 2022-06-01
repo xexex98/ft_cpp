@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 22:39:05 by mbarra            #+#    #+#             */
-/*   Updated: 2022/06/01 22:48:41 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/06/02 00:44:04 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ class Contact
 		Contact( void );
 		~Contact( void );
 		
-		void setFirstName(void);
-		void setLastName(void);
-		void setNickName(void);
-		void setPhone(void);
-		void setDarkestSecret(void);
+		void setFirstName(std::string str);
+		void setLastName(std::string str);
+		void setNickName(std::string str);
+		void setPhone(std::string str);
+		void setDarkestSecret(std::string str);
 
 		std::string getFirstName(void);
 		std::string getLastName(void);

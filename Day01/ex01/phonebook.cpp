@@ -6,33 +6,44 @@
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 22:45:18 by mbarra            #+#    #+#             */
-/*   Updated: 2022/06/02 00:09:49 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/06/02 01:00:45 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 #include "contact.hpp"
-
 using namespace std;
 
 PhoneBook::PhoneBook(void) {this->contuct_nums = 0; return ;};
-PhoneBook::~PhoneBook(void) {std::cout << "Quit PhoneBook." << std::endl; return ;};
+PhoneBook::~PhoneBook(void) {std::cout << "Закрытие телефонной книги!" << std::endl; return ;};
 
 void PhoneBook::add(void)
 {
-	int index = this->contuct_nums;
-	
-	cout << "Имя: " << endl;
-	this->contact[index].setFirstName();
-	cout << "Фамилия: " << endl;
-	this->contact[index].setLastName();
-	cout << "Ник: " << endl;
-	this->contact[index].setNickName();
-	cout << "Телефон: " << endl;
-	this->contact[index].setPhone();
-	cout << "Секрет: " << endl;
-	this->contact[index].setDarkestSecret();
-	this->contuct_nums++;
+	int	index;
+	std::string str;
+
+	if (this->contuct_nums < MAX_CON + 1)
+	{
+		this->contuct_nums++;
+		index = this->contuct_nums - 1;
+	}
+	else
+		index = 0;
+	std::cout << "Имя: " << std::endl;
+	getline(std::cin, str);
+	this->contact[index].setFirstName(str);
+	std::cout << "Фамилия: " << std::endl;
+	getline(std::cin, str);
+	this->contact[index].setLastName(str);
+	std::cout << "Ник: " << std::endl;
+	getline(std::cin, str);
+	this->contact[index].setNickName(str);
+	std::cout << "Телефон: " << std::endl;
+	getline(std::cin, str);
+	this->contact[index].setPhone(str);
+	std::cout << "Секрет: " << std::endl;
+	getline(std::cin, str);
+	this->contact[index].setDarkestSecret(str);
 	return ;
 }
 
@@ -54,12 +65,12 @@ void PhoneBook::search(void)
 	std::cout << "|-------------------------------------------|" << std::endl;
   std::cout << "|  Индекс  |    Имя   |  Фамилия |   Ник    |" << std::endl;
   std::cout << "|----------|----------|----------|----------|" << std::endl;
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < this->contuct_nums; i++)
 	{
 		std::cout << "|" << std::setw(10) << std::setfill(' ') << i + 1;
-		dataOverflow(this->contact[0].getFirstName());
-		dataOverflow(this->contact[0].getLastName());
-		dataOverflow(this->contact[0].getNickName());
+		dataOverflow(this->contact[index].getFirstName());
+		dataOverflow(this->contact[index].getLastName());
+		dataOverflow(this->contact[index].getNickName());
 		std::cout << "|" << std::endl;
 	}
 	std::cout << "|-------------------------------------------|" << std::endl;
@@ -81,62 +92,20 @@ void PhoneBook::search(void)
 	return ;
 }
 
-int main (void) {
+int main(void)
+{
 	PhoneBook pb;
-
-	std::string a;
-
-	// getline(std::cin, a);
-
-	// cout << a << endl;
-	pb.add();
-	pb.add();
-
-	pb.search();
-	// int choice = 0;
-	// while (1) {
-	// 	cout<<"1.ADD\n";
-	// 	cout<<"2.SEARCH\n";
-	// 	cout<<"3.EXIT\n";
-	// 	cout<<"Вы выбрали: ";
-	// 	cin >> choice;
-		
-	// 	switch(choice)
-	// 	{
-	// 		case 1 : 
-	// 			cout<<"Вы выбрали ADD." << endl;
-	// 			if (size < MAX_CON) {
-	// 				cout << "Введите имя: ";
-	// 				cin >> name;
-	// 				cout << "Введите номер: ";
-	// 				cin >> phone;
-	// 				// cout << phoneBook[size].add(name, phone) << endl;
-	// 				// cout << phoneBook[size].name << endl;
-	// 				size++;
-	// 			} 
-	// 			else {
-	// 				cout << "Книга переполнена! Будет переписан первый контакт" << endl;
-	// 			}
-	// 			break;
-	// 		case 2 :
-	// 			cout<<"Вы выбрали SEARCH." << endl;;
-	// 			if (size) {
-	// 				for (int i = 0; i < MAX_CON; i++) {
-	// 					// phoneBook[0].show("12345", "123");
-	// 				}
-	// 			} else {
-	// 				cout << "PHONEBOOK IS EMPTY" << endl;
-	// 			}
-	// 			break;
-	// 		case 3 :
-	// 			cout<<"Выход!"<<endl;
-	// 			exit(1);
-	// 		default:
-	// 			cout<<"Нет такой опции!"<<endl;
-	// 			break;
-	// 			// exit(1);
-	// 	}
-
-
-	// }
+	std::string option;
+	
+	std::cout << "______\nADD\nSEARCH\nEXIT\n------\n>>";
+	while (getline(std::cin, option)) {
+		if (!option.compare("EXIT"))
+			return (0);
+		else if (!option.compare("ADD"))
+			pb.add();
+		else if (!option.compare("SEARCH"))
+			pb.search();
+		std::cout << ">>";
+	}
+	return (0);
 }
