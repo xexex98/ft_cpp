@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 22:45:18 by mbarra            #+#    #+#             */
-/*   Updated: 2022/06/02 01:06:10 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/06/02 22:02:03 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void PhoneBook::add(void)
 	int	index;
 	std::string str;
 
-	if (this->contuct_nums < MAX_CON + 1)
+	if (this->contuct_nums < MAX_CON)
 	{
 		this->contuct_nums++;
 		index = this->contuct_nums - 1;
@@ -54,8 +54,9 @@ void	PhoneBook::dataOverflow(std::string str)
 		str = str.substr(0, 10);
 	}
 	std::cout << "|" << std::setw(10) << std::setfill(' ') << str;
+	return ;
 }
-//TODO косяк был тут надо доделать
+
 void PhoneBook::search(void)
 {
 	int index = 0;
