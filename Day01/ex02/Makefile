@@ -6,11 +6,11 @@
 #    By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 22:49:36 by mbarra            #+#    #+#              #
-#    Updated: 2022/06/02 22:19:32 by mbarra           ###   ########.fr        #
+#    Updated: 2022/06/05 20:55:11 by mbarra           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook \
+NAME = account \
 
 HEADER = Account.hpp \
 
