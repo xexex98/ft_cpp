@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/08 18:44:37 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/08 18:44:37 by marvin           ###   ########.fr       */
+/*   Created: 2022/06/08 21:25:53 by mbarra            #+#    #+#             */
+/*   Updated: 2022/06/08 21:25:53 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef __ZOMBIE_HPP__
 # define __ZOMBIE_HPP__
 
