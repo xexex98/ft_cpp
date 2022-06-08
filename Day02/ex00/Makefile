@@ -1,0 +1,31 @@
+NAME = zombie \
+
+HEADER = Zombie.hpp \
+
+SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp\
+
+OBJ	= $(SRC:%.cpp=%.o) \
+
+CC = c++ \
+
+RM = rm -f \
+
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
+
+all: $(NAME)
+
+$(NAME): $(OBJ) $(HEADER)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) $(OBJ)
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
