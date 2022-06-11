@@ -6,7 +6,7 @@
 #    By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/09 22:27:09 by mbarra            #+#    #+#              #
-#    Updated: 2022/06/09 23:14:10 by mbarra           ###   ########.fr        #
+#    Updated: 2022/06/11 21:38:43 by mbarra           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ CC = c++ \
 
 RM = rm -f \
 
-CFLAGS = -std=c++98 #-Wall -Wextra -Werror 
+CFLAGS = -std=c++98 -Wall -Wextra -Werror 
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
