@@ -22,7 +22,7 @@ private:
 	void info( void );
 	void waring( void );
 	void error( void );
-
+	
 public:
 	void complain( std::string level );
 	Harl();

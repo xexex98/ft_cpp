@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/15 19:28:46 by mbarra            #+#    #+#             */
-/*   Updated: 2022/06/15 19:28:46 by mbarra           ###   ########.fr       */
+/*   Created: 2022/06/15 19:27:15 by mbarra            #+#    #+#             */
+/*   Updated: 2022/06/15 19:27:15 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __HARL_HPP__
-# define __HARL_HPP__
+#include "Harl.hpp"
 
-#include <iostream>
+int main(int argc, char **argv){
+	
+	if (argc != 2) {
+		std::cout << "Pls 2 args!" << std::endl;
+		return(-1);
+	}
 
-class Harl
-{
-private:
-	void debug( void );
-	void info( void );
-	void waring( void );
-	void error( void );
+	Harl harl;
 
-public:
-	void complain( std::string level );
-	Harl();
-	~Harl();
-};
+	harl.complain(argv[1]);
 
-typedef void (Harl::*f)(void);
-#endif
+	return (0);
+}
