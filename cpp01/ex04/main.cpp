@@ -16,23 +16,6 @@
 #include <fstream>
 #include <cstdlib>
 
-void ft_replace(std::ifstream& infile, std::string s1, std::string s2){
-	std::string inputFileText;
-	std::ofstream outfile("as.replaced");
-	
-	while (std::getline(infile, inputFileText)){
-		if(inputFileText.find(s1) != std::string::npos){
-			int findPos = inputFileText.find(s1);
-			inputFileText.erase(findPos, s1.length());
-			inputFileText.insert(findPos, s2);
-			outfile << inputFileText << std::endl;
-		}else{
-			outfile << inputFileText << std::endl;
-		}
-	}
-	outfile.close();
-}
-
 int main(int argc, char **argv)
 {
 	if(argc != 4){
@@ -47,7 +30,21 @@ int main(int argc, char **argv)
 		std::cout << "No read file!" << std::endl;
 		exit(EXIT_FAILURE);
 	}
-	ft_replace(inputFileName s1, s2);
+
+	std::string inputFileText;
+	std::ofstream outfile(inputFileName + ".replaced");
+	
+	while (std::getline(infile, inputFileText)) {
+		if(inputFileText.find(s1) != std::string::npos) {
+			int findPos = inputFileText.find(s1);
+			inputFileText.erase(findPos, s1.length());
+			inputFileText.insert(findPos, s2);
+			outfile << inputFileText << std::endl;
+		}else {
+			outfile << inputFileText << std::endl;
+		}
+	}
+	outfile.close();
 	infile.close();
 	return (0);
 }

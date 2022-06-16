@@ -22,7 +22,7 @@ CC = c++ \
 
 RM = rm -f \
 
-CFLAGS = -std=c++98 #-Wall -Wextra -Werror 
+CFLAGS = -std=c++98 -Wall -Wextra -Werror 
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
