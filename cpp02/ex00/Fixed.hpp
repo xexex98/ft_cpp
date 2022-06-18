@@ -1,19 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/18 16:56:36 by mbarra            #+#    #+#             */
-/*   Updated: 2022/06/18 19:01:07 by mbarra           ###   ########.fr       */
+/*   Created: 2022/06/18 18:56:01 by mbarra            #+#    #+#             */
+/*   Updated: 2022/06/18 19:29:45 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef __FIXED__
+# define __FIXED__
 
-int main(void)
+# include <iostream>
+
+class Fixed
 {
+private:
+	/* data */
+public:
+	Fixed();
+	~Fixed();
+	Fixed(const Fixed &fixed){};
+	Fixed& operator=(const Fixed& fixed){return *this;};
+};
 
-	return (0);
+Fixed::Fixed(/* args */)
+{
 }
+
+Fixed::~Fixed()
+{
+}
+
+
+#endif

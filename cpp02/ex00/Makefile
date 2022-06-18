@@ -6,7 +6,7 @@
 #    By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/31 14:18:51 by mbarra            #+#    #+#              #
-#    Updated: 2022/06/18 17:03:00 by mbarra           ###   ########.fr        #
+#    Updated: 2022/06/18 19:29:13 by mbarra           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJ				=		$(patsubst %.cpp, %.o, $(SRC))
 
 CC				=		c++
 RM				=		rm -f
-CFLAGS		=		-std=c++98 -Wall -Wextra -Werror
+CFLAGS		=		-std=c++98 #-Wall -Wextra -Werror
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
