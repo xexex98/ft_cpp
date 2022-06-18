@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 18:56:01 by mbarra            #+#    #+#             */
-/*   Updated: 2022/06/18 19:29:45 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/06/18 20:33:29 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,16 @@
 class Fixed
 {
 private:
-	/* data */
+	int number;
+	static const int sci = 0;
 public:
 	Fixed();
+	Fixed(const Fixed& fixed);
 	~Fixed();
-	Fixed(const Fixed &fixed){};
-	Fixed& operator=(const Fixed& fixed){return *this;};
+	Fixed & operator=(const Fixed& fixed);
+	
+	int getRawBits( void ) const;
+	void setRawBits( int const raw );
 };
-
-Fixed::Fixed(/* args */)
-{
-}
-
-Fixed::~Fixed()
-{
-}
-
 
 #endif

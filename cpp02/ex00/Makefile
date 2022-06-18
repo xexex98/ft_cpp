@@ -6,7 +6,7 @@
 #    By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/31 14:18:51 by mbarra            #+#    #+#              #
-#    Updated: 2022/06/18 19:29:13 by mbarra           ###   ########.fr        #
+#    Updated: 2022/06/18 19:46:49 by mbarra           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,5 +41,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-
+# r: ./ex00
 .PHONY: all clean fclean re
