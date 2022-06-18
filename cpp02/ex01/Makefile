@@ -6,11 +6,11 @@
 #    By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/31 14:18:51 by mbarra            #+#    #+#              #
-#    Updated: 2022/06/18 20:42:08 by mbarra           ###   ########.fr        #
+#    Updated: 2022/06/18 22:02:57 by mbarra           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=		ex00
+NAME			=		ex01
 
 HDR				=		$(wildcard $(HDR_DIR)/*.hpp)
 
