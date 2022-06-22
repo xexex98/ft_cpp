@@ -6,17 +6,17 @@
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 20:41:06 by mbarra            #+#    #+#             */
-/*   Updated: 2022/06/20 21:32:20 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/06/22 23:51:44 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-// Fixed::Fixed()
-// {
-// 	std::cout << "Default constructor called" << std::endl;
-// 	this->number = 0;
-// }
+Fixed::Fixed()
+{
+	std::cout << "Default constructor called" << std::endl;
+	this->number = 0;
+}
 
 Fixed::Fixed(const int cint)
 {
@@ -73,3 +73,13 @@ std::ostream &operator << (std::ostream &out, Fixed const &fixed)
 	out << fixed.toFloat();
 	return out;
 }
+
+// Fixed &Fixed::operator=(const Fixed& fixed);
+
+Fixed Fixed::operator * (const Fixed & a){
+
+	return this->toFloat() * a.toFloat();
+}
+	// Fixed operator / (const Fixed & a);
+	// Fixed operator + (const Fixed & a);
+	// Fixed operator - (const Fixed & a);
