@@ -5,31 +5,33 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/01 22:49:36 by mbarra            #+#    #+#              #
-#    Updated: 2022/07/08 01:16:05 by mbarra           ###   ########.fr        #
+#    Created: 2022/07/07 21:14:47 by mbarra            #+#    #+#              #
+#    Updated: 2022/07/07 23:55:07 by mbarra           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook \
+NAME			=		ex00
 
-HEADER = contact.hpp phonebook.hpp \
+HDR				=		$(wildcard $(HDR_DIR)/*.hpp)
 
-SRC = contact.cpp phonebook.cpp \
+HDR_DIR		=		.
 
-OBJ	= $(SRC:%.cpp=%.o) \
+SRC				=		$(wildcard $(SRC_DIR)/*.cpp)
 
-CC = c++ \
+SRC_DIR		=		.
 
-RM = rm -f \
+OBJ				=		$(patsubst %.cpp, %.o, $(SRC))
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CC				=		c++
+RM				=		rm -f
+CFLAGS			=		-std=c++98 #-Wall -Wextra -Werror
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(HEADER)
+$(NAME): $(OBJ) $(HDR)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:

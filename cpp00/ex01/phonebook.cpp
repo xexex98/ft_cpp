@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 22:45:18 by mbarra            #+#    #+#             */
-/*   Updated: 2022/06/02 22:02:03 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/08 01:16:03 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ void PhoneBook::add(void)
 		this->contuct_nums++;
 		index = this->contuct_nums - 1;
 	}
-	else
+	else {
 		index = 0;
+	}
 	std::cout << "Имя: " << std::endl;
 	getline(std::cin, str);
 	this->contact[index].setFirstName(str);
@@ -63,8 +64,8 @@ void PhoneBook::search(void)
 	std::string line;
 
 	std::cout << "|-------------------------------------------|" << std::endl;
-  std::cout << "|  Индекс  |    Имя   |  Фамилия |   Ник    |" << std::endl;
-  std::cout << "|----------|----------|----------|----------|" << std::endl;
+	std::cout << "|  Индекс  |    Имя   |  Фамилия |   Ник    |" << std::endl;
+	std::cout << "|----------|----------|----------|----------|" << std::endl;
 	for (int i = 0; i < this->contuct_nums; i++)
 	{
 		std::cout << "|" << std::setw(10) << std::setfill(' ') << i + 1;
@@ -96,7 +97,7 @@ int main(void)
 {
 	PhoneBook pb;
 	std::string option;
-	
+
 	std::cout << "______\nADD\nSEARCH\nEXIT\n------\n>>";
 	while (getline(std::cin, option)) {
 		if (!option.compare("EXIT"))
