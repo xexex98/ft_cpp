@@ -6,28 +6,30 @@
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 23:20:07 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/09 20:43:07 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/09 20:56:09 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+
 
 int main(void)
 {
-    ScavTrap defClap;
-    ScavTrap withName("Denim");
-    ScavTrap Copy(withName);
+    FragTrap defClap;
+    FragTrap withName("Denim");
+    FragTrap Copy(withName);
 
     withName.attack("Hammer");
-    withName.beRepaired(80);
     withName.takeDamage(70);
     withName.takeDamage(50);
+    withName.beRepaired(80);
     Copy.attack("Hummer");
     Copy.takeDamage(90);
     Copy.takeDamage(10);
     Copy.beRepaired(80);
-    Copy.guardGate();
+    Copy.highFivesGuys();
     
     return (0);
 }

@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/09 18:52:02 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/09 20:55:14 by mbarra           ###   ########.fr       */
+/*   Created: 2022/07/07 23:20:07 by mbarra            #+#    #+#             */
+/*   Updated: 2022/07/09 21:57:55 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __SCAVTRAP__
-# define __SCAVTRAP__
-
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
-class ScavTrap : public ClapTrap
+
+// TODO: посмотерть что аткое virtual
+
+int main(void)
 {
-public:
-    ScavTrap();
-    ScavTrap(std::string name);
-    ~ScavTrap();
-    ScavTrap & operator = (const ScavTrap & scavtrap);
-    ScavTrap(const ScavTrap & scavtrap);
-    
-    void guardGate();
-};
+    DiamondTrap defClap;
+    DiamondTrap withName("Denim");
 
-#endif
+
+    withName.attack("Hammer");
+    withName.takeDamage(70);
+    withName.takeDamage(50);
+    withName.beRepaired(80);
+    defClap.whoAmI();
+    withName.whoAmI();
+    
+    return (0);
+}
