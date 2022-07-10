@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:53:04 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/10 21:05:23 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/10 21:26:38 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ANIMAL__
-# define __ANIMAL__
+#ifndef __WRONGANIMAL__
+# define __WRONGANIMAL__
 
 # include <iostream>
 
@@ -23,18 +23,18 @@
 # define CYAN "\033[33;36m"
 # define DEFAULT "\033[33;0m"
 
-class Animal
+class WrongAnimal
 {
 protected:
 	std::string type;
 
 public:
-	Animal(void);
-	virtual ~Animal(void);
-	Animal &operator=(const Animal &Animal);
-	Animal(const Animal & Animal);
+	WrongAnimal(void);
+	virtual ~WrongAnimal(void);
+	WrongAnimal &operator=(const WrongAnimal &WrongAnimal);
+	WrongAnimal(const WrongAnimal & WrongAnimal);
 
-	virtual void makeSound(void) const;
+	void makeSound(void) const;
 	std::string getType(void) const;
 };
 

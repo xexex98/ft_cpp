@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 19:41:46 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/10 20:04:40 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/10 21:24:01 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Cat & Cat::operator = (const Cat & Cat) {
   
 	std::cout << CYAN"Cat "DEFAULT
 						<< "Copy assigment operator called!" << std::endl;
-	this->type = Cat.type;
+	this->type = Cat.getType();
 	return *this;
 };
 
@@ -40,7 +40,7 @@ Cat::Cat(const Cat & Cat) {
   *this = Cat;
 };
 
-void Cat::makeSound(void) {
+void Cat::makeSound(void) const {
 	
-	std::cout << "meow" << std::endl;
+	std::cout << "Meow" << std::endl;
 };

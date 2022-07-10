@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 19:05:39 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/10 19:59:52 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/10 20:30:09 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ class Cat : public Animal
 public:
 	Cat(void);
 	~Cat(void);
-	Cat &operator=(const Cat & Cat);
-	Cat(const Cat & Cat);
+	Cat &operator=(const Cat &Cat);
+	Cat(const Cat &Cat);
 
-	void makeSound( void );
+	void makeSound(void) const;
 };
 
 #endif

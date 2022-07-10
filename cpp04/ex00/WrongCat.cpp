@@ -1,45 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/10 19:38:08 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/10 21:29:48 by mbarra           ###   ########.fr       */
+/*   Created: 2022/07/10 19:41:46 by mbarra            #+#    #+#             */
+/*   Updated: 2022/07/10 21:23:52 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-Dog::Dog(void) { 
+WrongCat::WrongCat(void) { 
 	
-	std::cout << GREEN"Dog " DEFAULT
+	std::cout << GREEN"WrongCat " DEFAULT
 						<< "Default Constructor called!" << std::endl;
-	this->type = "Dog"; 
+	this->type = "WrongCat"; 
 };
 
-Dog::~Dog(void) { 
+WrongCat::~WrongCat(void) { 
 
-	std::cout << RED"Dog " DEFAULT
+	std::cout << RED"WrongCat " DEFAULT
 						<< "Default Destructor called!" << std::endl;
 };
 
-Dog & Dog::operator = (const Dog & Dog) {
-	std::cout << CYAN"Dog "DEFAULT
+WrongCat & WrongCat::operator = (const WrongCat & WrongCat) {
+  
+	std::cout << CYAN"WrongCat "DEFAULT
 						<< "Copy assigment operator called!" << std::endl;
-	this->type = Dog.getType();
+	this->type = WrongCat.getType();
 	return *this;
 };
 
-Dog::Dog(const Dog & Dog) {
-
-	std::cout << CYAN"Dog "DEFAULT
+WrongCat::WrongCat(const WrongCat & WrongCat) {
+  
+	std::cout << CYAN"WrongCat "DEFAULT
 						<< "Copy constructor called!" << std::endl;
-	*this = Dog;
+  *this = WrongCat;
 };
 
-void Dog::makeSound(void) const {
-
-	std::cout << "Bark" << std::endl;
+void WrongCat::makeSound(void) const {
+	
+	std::cout << "Meow" << std::endl;
 };

@@ -1,51 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 19:00:58 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/10 20:27:08 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/10 21:21:35 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal(void) {
+WrongAnimal::WrongAnimal(void) {
 	
-	this->type = "WHO?";
-	std::cout << GREEN "Animal " DEFAULT
+	this->type = "WrongAnimal";
+	std::cout << GREEN "WrongAnimal " DEFAULT
 						<< "Default Constructor called!" << std::endl;
 };
 
-Animal::~Animal(void) {
+WrongAnimal::~WrongAnimal(void) {
 
-	std::cout << RED "Animal " DEFAULT
+	std::cout << RED "WrongAnimal " DEFAULT
 						<< "Default Constructor called!" << std::endl;
 };
 
-Animal & Animal::operator = (const Animal & Animal) {
+WrongAnimal & WrongAnimal::operator = (const WrongAnimal & WrongAnimal) {
 
-	std::cout << CYAN "Animal " DEFAULT
+	std::cout << CYAN "WrongAnimal " DEFAULT
 						<< "Copy assigment operator called!" << std::endl;
-	this->type = Animal.getType();
+	this->type = WrongAnimal.getType();
 	return *this;
 }
 
-Animal::Animal(const Animal & Animal) {
+WrongAnimal::WrongAnimal(const WrongAnimal & WrongAnimal) {
 
-	std::cout << CYAN"Animal "DEFAULT
+	std::cout << CYAN"WrongAnimal "DEFAULT
 						<< "Copy constructor called!" << std::endl;
-  *this = Animal;
+  *this = WrongAnimal;
 }
 
-void Animal::makeSound(void) const {
+void WrongAnimal::makeSound(void) const {
 	
 	std::cout << "AAAAAA!" << std::endl;
 }
 
-std::string Animal::getType(void) const{
+std::string WrongAnimal::getType(void) const{
 	
 	return this->type;
 }
