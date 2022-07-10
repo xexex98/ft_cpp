@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 19:03:55 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/10 17:06:43 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/10 17:42:36 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
     this->hp = 100;
     this->mp = 50;
     this->dmg = 20;
+    
     std::cout << GREEN"FragTrap "DEFAULT<< "Constructor Called!" <<std::endl;
 }
 
