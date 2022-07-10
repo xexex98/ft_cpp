@@ -6,23 +6,22 @@
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 19:03:55 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/09 21:55:50 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/10 17:15:55 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap(), FragTrap(), ScavTrap()
+DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap()
 {
     this->name = "DEFAULT DIAMOND";
     this->hp = 100;
     this->mp = 100;
     this->dmg = 30;
     std::cout << GREEN"DiamondTrap "DEFAULT<< "Default Constructor Called! " << this->name << std::endl;
-
 }
 
-DiamondTrap::DiamondTrap(std::string name) : FragTrap(name), ScavTrap(name), ClapTrap(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), FragTrap(name)
 {
     ClapTrap::name = name + "_clap_name";
     this->name = name;

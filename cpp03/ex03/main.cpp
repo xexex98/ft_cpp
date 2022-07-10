@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 23:20:07 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/09 21:57:55 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/10 17:14:19 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 #include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
 
-
-// TODO: посмотерть что аткое virtual
-
 int main(void)
 {
+
     DiamondTrap defClap;
     DiamondTrap withName("Denim");
 
