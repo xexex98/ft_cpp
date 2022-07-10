@@ -12,7 +12,6 @@
 
 #include "Zombie.hpp"
 
-// TODO лики проверить и написать тесты, переименовать название папки ex001 -> ex01
 int main ( void ){
 	Zombie* zombie = Zombie::zombieHorde(5, "Foo");
 	Zombie* zombie2 = Zombie::zombieHorde(5, "Au");
