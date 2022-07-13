@@ -15,7 +15,7 @@
 #include "Dog.hpp"
 #include "Brain.hpp"
 
-//TODO: Проверить на лики включить мейк спросить у ильдара про виртуал
+//TODO: Проверить на лики включить мейк спросить VIRTUAL, вернуть виртуал в AAnimal
 int main()
 {
 	// 	const AAnimal* j = new Dog();
