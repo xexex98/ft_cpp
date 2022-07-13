@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:53:04 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/10 21:05:23 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/13 20:16:14 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define __ANIMAL__
 
 # include <iostream>
-
+#include "Brain.hpp"
 # define RED  "\033[31m"
 # define GREEN "\033[33;32m"
 # define YELLOW "\033[33;33m"
@@ -36,6 +36,7 @@ public:
 
 	virtual void makeSound(void) const;
 	std::string getType(void) const;
+	virtual Brain *getBrain() const = 0;
 };
 
 #endif

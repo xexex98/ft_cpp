@@ -3,24 +3,49 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/10 18:52:11 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/10 22:03:26 by mbarra           ###   ########.fr       */
+/*   Created: 2022/07/10 19:07:26 by mbarra            #+#    #+#             */
+/*   Updated: 2022/07/13 20:21:55 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "Brain.hpp"
 
-int main(void) {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	delete j;//should not create a leak
-	delete i;
+//TODO: Проверить на лики
+int main()
+{
+    // std::srand(std::time(nullptr));
+    // {
+        const Animal* j = new Dog();
+        const Animal* i = new Cat();
 
-	return 0;
+        std::cout << j->getBrain()->getIdea(std::rand() % 100) << std::endl;
+        std::cout << i->getBrain()->getIdea(std::rand() % 100) << std::endl;
+        delete j;//should not create a leak
+        delete i;
+    // }
+
+
+    const int list_size = 4;
+    Animal *animal_list[list_size];
+
+    for (size_t i = 0; i < list_size; i++)
+    {
+        if (i % 2)
+            animal_list[i] = new Cat();
+        else
+            animal_list[i] = new Dog();
+    }
+
+    for (size_t i = 0; i < list_size; i++)
+    {
+        std::cout << (animal_list[i])->getBrain()->getIdea(std::rand() % 100) << std::endl;
+        delete animal_list[i];
+    }
+
+    return 0;
 }

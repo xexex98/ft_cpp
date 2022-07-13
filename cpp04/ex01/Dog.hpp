@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 19:07:26 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/10 21:28:29 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/13 20:09:39 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 # define __DOG__
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-class Dog : public Animal
+class Dog : public virtual Animal
 {
+private:
+	Brain* brain;
 public:
 	Dog(void);
 	~Dog(void);
@@ -24,6 +27,7 @@ public:
 	Dog(const Dog & Dog);
 
 	void makeSound(void) const;
+	Brain *getBrain(void) const;
 };
 
 #endif

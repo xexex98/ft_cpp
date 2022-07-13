@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 19:38:08 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/10 21:29:48 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/13 20:06:38 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ Dog::Dog(void) {
 	
 	std::cout << GREEN"Dog " DEFAULT
 						<< "Default Constructor called!" << std::endl;
-	this->type = "Dog"; 
+	this->type = "Dog";
+	this->brain = new Brain();
 };
 
 Dog::~Dog(void) { 
@@ -43,3 +44,7 @@ void Dog::makeSound(void) const {
 
 	std::cout << "Bark" << std::endl;
 };
+
+Brain *Dog::getBrain(void) const {
+	return this->brain;
+}

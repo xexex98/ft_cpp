@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 19:41:46 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/10 21:24:01 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/13 20:14:17 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,17 @@ Cat::Cat(void) {
 	std::cout << GREEN"Cat " DEFAULT
 						<< "Default Constructor called!" << std::endl;
 	this->type = "Cat"; 
+	this->brain = new Brain();
 };
 
 Cat::~Cat(void) { 
-
+	delete this->brain;
 	std::cout << RED"Cat " DEFAULT
 						<< "Default Destructor called!" << std::endl;
 };
 
 Cat & Cat::operator = (const Cat & Cat) {
-  
+
 	std::cout << CYAN"Cat "DEFAULT
 						<< "Copy assigment operator called!" << std::endl;
 	this->type = Cat.getType();
@@ -34,13 +35,17 @@ Cat & Cat::operator = (const Cat & Cat) {
 };
 
 Cat::Cat(const Cat & Cat) {
-  
+
 	std::cout << CYAN"Cat "DEFAULT
 						<< "Copy constructor called!" << std::endl;
-  *this = Cat;
+	*this = Cat;
 };
 
 void Cat::makeSound(void) const {
 	
 	std::cout << "Meow" << std::endl;
 };
+
+Brain *Cat::getBrain(void) const {
+	return this->brain;
+}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 19:05:39 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/10 20:30:09 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/13 20:09:35 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 # define __CAT__
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-class Cat : public Animal
+class Cat : public virtual Animal
 {
+private:
+	Brain* brain;
 public:
 	Cat(void);
 	~Cat(void);
@@ -24,6 +27,7 @@ public:
 	Cat(const Cat &Cat);
 
 	void makeSound(void) const;
+	Brain *getBrain(void) const;
 };
 
 #endif

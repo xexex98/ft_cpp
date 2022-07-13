@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mbarra <mbarra@student.42.fr>              +#+  +:+       +#+         #
+#    By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/07 21:14:47 by mbarra            #+#    #+#              #
-#    Updated: 2022/07/10 21:34:26 by mbarra           ###   ########.fr        #
+#    Updated: 2022/07/13 19:20:04 by mbarra           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJ				=		$(patsubst %.cpp, %.o, $(SRC))
 
 CC				=		c++
 RM				=		rm -f
-CFLAGS			=		-std=c++98 -Wall -Wextra -Werror
+CFLAGS			=		-std=c++98 #-Wall -Wextra -Werror
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
