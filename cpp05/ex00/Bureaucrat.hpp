@@ -11,37 +11,49 @@
 /* ************************************************************************** */
 
 #ifndef __BUREAUCRAT__
-# define __BUREAUCRAT__
+#define __BUREAUCRAT__
 
 #include <iostream>
 
 class Bureaucrat
 {
-public:
+
+private:
 	std::string name;
 	int grade;
 
+public:
 	Bureaucrat(void);
 	Bureaucrat(std::string name, int grade);
 	~Bureaucrat(void);
+	Bureaucrat(const Bureaucrat &Bureaucrat);
+	Bureaucrat &operator=(Bureaucrat const &Bureaucrat);
 
-	class GradeTooHighException: public std::exception
+	class GradeTooHighException : public std::exception
 	{
-		virtual const char* what() const throw()
+	public:
+		virtual const char *what() const throw()
 		{
 			return "TOO HIGHT";
 		}
 	};
 
-	
-	class GradeTooLowException: public std::exception
+	class GradeTooLowException : public std::exception
 	{
-		virtual const char* what() const throw()
+	public:
+		virtual const char *what() const throw()
 		{
 			return "TOO LOW";
-
 		}
 	};
+
+	std::string getName(void) const;
+	int getGrade(void) const;
+
+	void incGrade();
+	void decGrade();
 };
+
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &Bureaucrat);
 
 #endif

@@ -12,10 +12,26 @@
 
 #include "Bureaucrat.hpp"
 
-int main(void) {
-	
-	Bureaucrat b("Ivan", 200);
+int main(void)
+{
+	// TODO: delete and cheack leaks
+	try
+	{
+		Bureaucrat *b = new Bureaucrat("Ivan", 150);
+		std::cout << b;
+		// b.incGrade();
+		// std::cout << b.getGrade() << std::endl;
+		// b.decGrade();
+		// std::cout << b.getGrade() << std::endl;
 
-	
+		// b.decGrade();
+		// std::cout << b.getGrade() << std::endl;
+		// b.incGrade();
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
 	return 0;
 }
