@@ -14,21 +14,10 @@
 
 int main()
 {
+
 	Bureaucrat *b = new Bureaucrat("Denim", 1);
-	Bureaucrat *new_b = new Bureaucrat("NewDenim", 150);
-
-	try
-	{
-		Bureaucrat *wrong_b = new Bureaucrat("WrongDenim", 1200);
-		std::cout << *wrong_b << std::endl;
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
+	Form *f = new Form("SIMPLE_FORM", 5, 5);
 	std::cout << *b << std::endl;
-	std::cout << *new_b << std::endl;
 
 	try
 	{
@@ -39,18 +28,18 @@ int main()
 		std::cerr << e.what() << std::endl;
 	}
 
-	try
-	{
-		new_b->decGrade();
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
 	b->decGrade();
+	b->signForm(*f);
+
+	delete f;
+
+	f = new Form("MAIN_FORM", 1, 1);
+
+	b->signForm(*f);
 	std::cout << *b << std::endl;
 
+	delete f;
 	delete b;
-	delete new_b;
+
+	return 0;
 }
