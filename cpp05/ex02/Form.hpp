@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 23:49:53 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/22 01:23:27 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/23 23:56:56 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ private:
 public:
 	Form(void);
 	Form(std::string name, int iSign, int iExecute);
-	~Form(void);
+	virtual ~Form(void);
 	Form(const Form &Form);
 	Form &operator=(Form const &Form);
 
@@ -55,6 +55,7 @@ public:
 	int getiExecute() const;
 	bool getIndicator() const;
 	void beSigned(Bureaucrat const &Bureaucrat);
+	virtual void execute(Bureaucrat const &executor) = 0;
 };
 
 std::ostream &operator<<(std::ostream &os, const Form &Form);
