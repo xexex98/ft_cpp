@@ -6,12 +6,12 @@
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 21:31:44 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/24 14:22:22 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/24 21:42:36 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
-
+// TODO: исправить функцию рандома
 RobotomyRequestForm::RobotomyRequestForm(void) : Form("RobotomyRequest", "president", 72, 45)
 {
 	std::cout << "RobotomyRequestForm Default constructor called!" << std::endl;
@@ -27,10 +27,7 @@ RobotomyRequestForm::~RobotomyRequestForm(void)
 	std::cout << "RobotomyRequestForm Default destructor called!" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &RobotomyRequestForm)
-{
-	std::cout << "RobotomyRequestForm copy constructor" << std::endl;
-}
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &RobotomyRequestForm) : Form(RobotomyRequestForm.getName(), RobotomyRequestForm.getTarget(), 72, 45) {}
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &RobotomyRequestForm)
 {
@@ -40,8 +37,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &R
 
 void RobotomyRequestForm::executer() const
 {
-	int num = rand() % 2 + 1;
-	if (num == 1)
+	if (rand() % 2)
 	{
 		std::cout << this->getTarget() << " has been robotomized successfully." << std::endl;
 	}

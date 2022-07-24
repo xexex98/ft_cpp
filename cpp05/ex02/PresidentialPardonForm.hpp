@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 21:31:22 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/24 13:57:07 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/24 21:25:01 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
+
 class PresidentialPardonForm : public virtual Form
 {
 
@@ -27,5 +29,6 @@ public:
 
 	void executer() const;
 };
+std::ostream &operator<<(std::ostream &out, const PresidentialPardonForm &in);
 
 #endif

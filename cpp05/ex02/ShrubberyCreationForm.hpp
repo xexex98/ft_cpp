@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 21:31:22 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/24 14:22:24 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/24 21:25:26 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define __SHRUBBERYCREATIONFORM__
 
 #include <iostream>
+#include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include <fstream>
 class ShrubberyCreationForm : public virtual Form
@@ -28,5 +29,7 @@ public:
 
 	void executer() const;
 };
+
+std::ostream &operator<<(std::ostream &out, const ShrubberyCreationForm &in);
 
 #endif

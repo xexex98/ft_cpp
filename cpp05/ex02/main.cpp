@@ -11,35 +11,51 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
-
 	Bureaucrat *b = new Bureaucrat("Denim", 1);
-	Form *f = new Form("SIMPLE_FORM", 5, 5);
-	std::cout << *b << std::endl;
 
-	try
+	std::cout << std::endl;
 	{
-		b->incGrade();
+		Form *sc_form = new ShrubberyCreationForm("Denim");
+		b->signForm(*sc_form);
+		b->executeForm(*sc_form);
+		delete sc_form;
 	}
-	catch (const std::exception &e)
+	std::cout << std::endl;
+
+	std::cout << std::endl;
 	{
-		std::cerr << e.what() << std::endl;
+		Form *rr_form = new RobotomyRequestForm("Denim");
+		b->signForm(*rr_form);
+		b->executeForm(*rr_form);
+		delete rr_form;
 	}
+	std::cout << std::endl;
 
-	b->decGrade();
-	b->signForm(*f);
+	std::cout << std::endl;
+	{
+		Form *pp_form = new PresidentialPardonForm("Denim");
+		std::cout << *pp_form << std::endl;
+		try
+		{
+			pp_form->execute(*b);
+		}
+		catch (const std::exception &e)
+		{
+			std::cerr << e.what() << std::endl;
+		}
+		b->signForm(*pp_form);
+		b->executeForm(*pp_form);
+		delete pp_form;
+	}
+	std::cout << std::endl;
 
-	delete f;
-
-	f = new Form("MAIN_FORM", 1, 1);
-
-	b->signForm(*f);
-	std::cout << *b << std::endl;
-
-	delete f;
 	delete b;
-
 	return 0;
 }

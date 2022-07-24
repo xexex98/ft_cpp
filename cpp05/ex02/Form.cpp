@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 23:49:03 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/24 13:51:37 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/24 21:29:17 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Form::Form(void)
 	this->iExecute = 10;
 }
 
-Form::Form(std::string name, int iSign, int iExecute)
+Form::Form(std::string const name, int const iSign, int const iExecute)
 {
 	std::cout << "Form constructor called!" << std::endl;
 	this->name = name;
@@ -30,14 +30,14 @@ Form::Form(std::string name, int iSign, int iExecute)
 	this->iExecute = iExecute;
 }
 
-Form::Form(std::string name, std::string target, int iSign, int iExecute)
+Form::Form(std::string const name, std::string const target, int const iSign, int const iExecute)
 {
 	std::cout << "Form constructor called!" << std::endl;
 	this->name = name;
+	this->target = target;
 	this->indicator = false;
 	this->iSign = iSign;
 	this->iExecute = iExecute;
-	this->target = target;
 }
 
 Form::~Form(void)
@@ -102,6 +102,18 @@ void Form::beSigned(Bureaucrat const &Bureaucrat)
 	{
 		throw Form::GradeTooLowException();
 	}
+}
+
+void Form::execute(Bureaucrat const &Bureaucrat) const
+{
+	if (this->getIndicator() && Bureaucrat.getGrade() <= this->getiExecute())
+	{
+		this->executer();
+	}
+	else if (!this->getIndicator())
+		throw Form::NotSignedException();
+	else
+		throw Form::GradeTooLowException();
 }
 
 std::ostream &operator<<(std::ostream &os, const Form &Form)
