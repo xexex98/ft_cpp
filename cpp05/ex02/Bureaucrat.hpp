@@ -55,7 +55,9 @@ public:
 
 	void incGrade();
 	void decGrade();
+
 	void signForm(Form &Form) const;
+	void executeForm(Form const &Form) const;
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &Bureaucrat);

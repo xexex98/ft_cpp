@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 23:49:03 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/22 01:22:51 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/24 13:51:37 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,16 @@ Form::Form(std::string name, int iSign, int iExecute)
 	this->indicator = false;
 	this->iSign = iSign;
 	this->iExecute = iExecute;
+}
+
+Form::Form(std::string name, std::string target, int iSign, int iExecute)
+{
+	std::cout << "Form constructor called!" << std::endl;
+	this->name = name;
+	this->indicator = false;
+	this->iSign = iSign;
+	this->iExecute = iExecute;
+	this->target = target;
 }
 
 Form::~Form(void)
@@ -75,6 +85,11 @@ int Form::getiExecute() const
 bool Form::getIndicator() const
 {
 	return this->indicator;
+}
+
+std::string Form::getTarget() const
+{
+	return this->target;
 }
 
 void Form::beSigned(Bureaucrat const &Bureaucrat)
