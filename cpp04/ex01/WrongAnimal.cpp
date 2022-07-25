@@ -6,46 +6,46 @@
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 19:00:58 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/13 19:12:38 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/25 22:49:02 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal(void) {
-	
+WrongAnimal::WrongAnimal(void)
+{
 	this->type = "WrongAnimal";
 	std::cout << GREEN "WrongAnimal " DEFAULT
-						<< "Default Constructor called!" << std::endl;
+			  << "Default Constructor called!" << std::endl;
 };
 
-WrongAnimal::~WrongAnimal(void) {
-
+WrongAnimal::~WrongAnimal(void)
+{
 	std::cout << RED "WrongAnimal " DEFAULT
-						<< "Default Constructor called!" << std::endl;
+			  << "Default Constructor called!" << std::endl;
 };
 
-WrongAnimal & WrongAnimal::operator = (const WrongAnimal & WrongAnimal) {
-
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &WrongAnimal)
+{
 	std::cout << CYAN "WrongAnimal " DEFAULT
-						<< "Copy assigment operator called!" << std::endl;
+			  << "Copy assigment operator called!" << std::endl;
 	this->type = WrongAnimal.getType();
 	return *this;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal & WrongAnimal) {
-
-	std::cout << CYAN"WrongAnimal "DEFAULT
-						<< "Copy constructor called!" << std::endl;
-  *this = WrongAnimal;
+WrongAnimal::WrongAnimal(const WrongAnimal &WrongAnimal)
+{
+	std::cout << CYAN "WrongAnimal " DEFAULT
+			  << "Copy constructor called!" << std::endl;
+	*this = WrongAnimal;
 }
 
-void WrongAnimal::makeSound(void) const {
-	
+void WrongAnimal::makeSound(void) const
+{
 	std::cout << "AAAAAA!" << std::endl;
 }
 
-std::string WrongAnimal::getType(void) const{
-	
+std::string WrongAnimal::getType(void) const
+{
 	return this->type;
 }

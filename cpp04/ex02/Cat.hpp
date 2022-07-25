@@ -6,12 +6,12 @@
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 19:05:39 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/13 20:35:47 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/25 22:50:34 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __CAT__
-# define __CAT__
+#define __CAT__
 
 #include "AAnimal.hpp"
 #include "Brain.hpp"
@@ -19,7 +19,8 @@
 class Cat : public virtual AAnimal
 {
 private:
-	Brain* brain;
+	Brain *brain;
+
 public:
 	Cat(void);
 	~Cat(void);

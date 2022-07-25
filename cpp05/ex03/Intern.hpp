@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/10 21:42:08 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/25 22:47:21 by mbarra           ###   ########.fr       */
+/*   Created: 2022/07/13 21:31:22 by mbarra            #+#    #+#             */
+/*   Updated: 2022/07/25 23:11:22 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __BRAIN__
-#define __BRAIN__
+#ifndef __INTERN__
+#define __INTERN__
 
 #include <iostream>
-#include <cstdlib>
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-#define RED "\033[31m"
-#define GREEN "\033[33;32m"
-#define YELLOW "\033[33;33m"
-#define BLUE "\033[33;34m"
-#define MAGNETA "\033[33;35m"
-#define CYAN "\033[33;36m"
-#define DEFAULT "\033[33;0m"
+class RobotomyRequestForm;
+class ShrubberyCreationForm;
+class PresidentialPardonForm;
 
-class Brain
+class Intern
 {
-private:
-	std::string ideas[100];
 
 public:
-	Brain(void);
-	~Brain(void);
-	Brain(const Brain &Brain);
-	Brain &operator=(const Brain &Brain);
+	Intern(void);
+	~Intern(void);
+	Intern(const Intern &Intern);
+	Intern &operator=(Intern const &Intern);
 
-	std::string getIdea(int i) const;
+	Form *makeForm(std::string formName, std::string targetForm) const;
 };
 
 #endif

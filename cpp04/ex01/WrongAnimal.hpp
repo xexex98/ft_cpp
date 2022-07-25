@@ -6,22 +6,22 @@
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:53:04 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/13 19:17:33 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/25 22:49:04 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __WRONGANIMAL__
-# define __WRONGANIMAL__
+#define __WRONGANIMAL__
 
-# include <iostream>
+#include <iostream>
 
-# define RED  "\033[31m"
-# define GREEN "\033[33;32m"
-# define YELLOW "\033[33;33m"
-# define BLUE "\033[33;34m"
-# define MAGNETA "\033[33;35m"
-# define CYAN "\033[33;36m"
-# define DEFAULT "\033[33;0m"
+#define RED "\033[31m"
+#define GREEN "\033[33;32m"
+#define YELLOW "\033[33;33m"
+#define BLUE "\033[33;34m"
+#define MAGNETA "\033[33;35m"
+#define CYAN "\033[33;36m"
+#define DEFAULT "\033[33;0m"
 
 class WrongAnimal
 {
@@ -32,7 +32,7 @@ public:
 	WrongAnimal(void);
 	virtual ~WrongAnimal(void);
 	WrongAnimal &operator=(const WrongAnimal &WrongAnimal);
-	WrongAnimal(const WrongAnimal & WrongAnimal);
+	WrongAnimal(const WrongAnimal &WrongAnimal);
 
 	void makeSound(void) const;
 	std::string getType(void) const;

@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 19:07:26 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/13 20:21:55 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/07/25 22:48:52 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "Brain.hpp"
+#include <ctime>
 
-//TODO: Проверить на лики
-int main()
+// TODO: Проверить на лики
+int main(void)
 {
-    // std::srand(std::time(nullptr));
-    // {
-        const Animal* j = new Dog();
-        const Animal* i = new Cat();
+    std::srand(std::time(nullptr));
+    {
+        const Animal *j = new Dog();
+        const Animal *i = new Cat();
 
         std::cout << j->getBrain()->getIdea(std::rand() % 100) << std::endl;
         std::cout << i->getBrain()->getIdea(std::rand() % 100) << std::endl;
-        delete j;//should not create a leak
+        delete j; // should not create a leak
         delete i;
-    // }
-
+    }
 
     const int list_size = 4;
     Animal *animal_list[list_size];
