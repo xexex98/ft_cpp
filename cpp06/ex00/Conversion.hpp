@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 00:55:50 by mbarra            #+#    #+#             */
-/*   Updated: 2022/08/01 23:09:41 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/08/02 00:53:51 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ public:
 	Conversion &operator=(Conversion const &obj);
 	Conversion(Conversion const &obj);
 	bool isNum(std::string str);
+	bool valid(std::string str);
 };
 
 #endif // __CONVERSION__

@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 01:04:48 by mbarra            #+#    #+#             */
-/*   Updated: 2022/08/01 23:12:19 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/08/02 01:03:48 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 Conversion::Conversion()
 {
-	cout << "Default Constructor called!" << endl;
 }
 
 Conversion::~Conversion()
 {
-	cout << "Default Destructor called!" << endl;
 }
 
 Conversion &Conversion::operator=(Conversion const &obj)
@@ -43,4 +41,11 @@ bool Conversion::isNum(std::string str)
 		}
 	}
 	return true;
+}
+
+bool Conversion::valid(std::string str)
+{
+	return str == "-inff" || str == "+inff" ||
+				 str == "nanf" || str == "nan" ||
+				 str == "+inf" || str == "-inf";
 }
