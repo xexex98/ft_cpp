@@ -1,57 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.hpp                                           :+:      :+:    :+:   */
+/*   Conversion.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/30 00:55:50 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/30 02:14:58 by mbarra           ###   ########.fr       */
+/*   Created: 2022/07/30 01:04:48 by mbarra            #+#    #+#             */
+/*   Updated: 2022/08/01 23:12:19 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined(__MAIN__)
-#define __MAIN__
+#include "Conversion.hpp"
 
-#include <iostream>
-#include <string>
-#include <typeinfo>
-
-using std::cout;
-using std::endl;
-
-class Conversion
+Conversion::Conversion()
 {
-private:
-	std::string s;
-	char c;
-	int i;
-	float f;
-	double d;
+	cout << "Default Constructor called!" << endl;
+}
 
-public:
-	Conversion();
-	Conversion(std::string s);
-	~Conversion();
-	Conversion &operator=(Conversion const &obj);
-	Conversion(Conversion const &obj);
-
-	std::string getString();
-
-	void toChar();
-	void toInt();
-	void toFloat();
-	void toDouble();
-};
+Conversion::~Conversion()
+{
+	cout << "Default Destructor called!" << endl;
+}
 
 Conversion &Conversion::operator=(Conversion const &obj)
 {
 	(void)obj;
 	return *this;
 }
+
 Conversion::Conversion(Conversion const &obj)
 {
 	(void)obj;
 }
 
-#endif // __MAIN__
+bool Conversion::isNum(std::string str)
+{
+	for (size_t i = 0; i < str.length(); i++)
+	{
+		if (std::isdigit(str[i]) == false)
+		{
+			return false;
+		}
+	}
+	return true;
+}
