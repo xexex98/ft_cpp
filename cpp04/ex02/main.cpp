@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 19:07:26 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/25 22:50:47 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/08/04 23:12:06 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "Dog.hpp"
 #include "Brain.hpp"
 #include <ctime>
-// TODO: Проверить на лики включить мейк спросить VIRTUAL, вернуть виртуал в AAnimal
+
 int main(void)
 {
 	std::srand(std::time(nullptr));

@@ -6,7 +6,7 @@
 /*   By: mbarra <mbarra@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 19:07:26 by mbarra            #+#    #+#             */
-/*   Updated: 2022/07/25 22:48:52 by mbarra           ###   ########.fr       */
+/*   Updated: 2022/08/04 23:12:23 by mbarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "Brain.hpp"
 #include <ctime>
 
-// TODO: Проверить на лики
 int main(void)
 {
     std::srand(std::time(nullptr));
